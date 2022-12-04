@@ -7,7 +7,7 @@ import Router from 'next/router'
 import { Button } from "flowbite-react";
 
 export interface Post {
-  id: number;
+  id?: number;
   createdAt: Date | string;
   updatedAt: Date | string;
   published: boolean;
@@ -42,13 +42,13 @@ export default function Posts({ feeds}: PostsProps) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Anonymus Blog</title>
+        <title>Blog Posts</title>
         <meta name="description" content="Anonymus Blog" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Anonymus Blog , Post anything 
+          Blog Posts , Post anything 
         </h1>
         <Button color="success" onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
             e.preventDefault()

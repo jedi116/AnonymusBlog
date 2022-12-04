@@ -9,10 +9,28 @@ const Post = () => {
   const { id } = router.query
   const {post, fetchPost, loading} = usePost(id as string)
   return (
-  <>
-    <h1>{post?.title}</h1>
-    <p>{post?.body}</p>
-  </>
+  <div 
+    style={{
+        display:'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        height: '100vh'
+    }}
+  >
+    <h1
+        style={{
+            fontSize: '35px',
+            marginTop: '200px',
+            fontStyle: 'oblique',
+            textDecoration: 'underline'
+        }}
+    >{post?.title}</h1>
+    <p
+        style={{
+            padding: '50px'
+        }}
+    >{post?.body}</p>
+  </div>
   )
 }
 
