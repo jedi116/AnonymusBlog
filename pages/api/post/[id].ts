@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.json(converted)
     } catch (err: any) {
         res.status(500).json({
-            error: err
+            error: err.message
         })
     }
   }
