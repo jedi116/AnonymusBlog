@@ -1,7 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import { Post } from "../../posts";
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const { id } = req.query
+    try {
+        const { id } = req.query
     const ID = typeof id === 'string' ? parseInt(id) : 0
     const feed = await prisma.post.findUnique({
         where: { id: ID }
@@ -12,4 +13,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         updatedAt: feed?.updatedAt.toString(),
       }
     res.json(converted)
+    } catch (err: any) {
+        res.status(500).json({
+            error: err
+        })
+    }
   }
