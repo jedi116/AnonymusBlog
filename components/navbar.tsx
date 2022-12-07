@@ -5,15 +5,22 @@ import logo from '../public/logo.png'
 
 
 export const BlogNavBar = () => {
-    //class="h-14 bg-gradient-to-r from-sky-500 to-indigo-500"
+    //class="h-14 bg-gradient-to-r from-sky-500 to-indigo-500" -- linear-gradient(to right, #c9ffbf, #ffafbd)
     return (
-        <div style={{margin:'10px'}}>    
+        <div 
+            className="bg-indigo-500" 
+            style={{
+                background: '#DCE1E3',
+                padding: '20px',
+                borderRadius: '10px'
+            }}
+        >    
+            
             <nav className="p-3 bg-gradient-to-r from-sky-500 to-indigo-500">
                 <div className="container flex flex-wrap items-center justify-between mx-auto">
                     <a href="/" className="flex items-center">
                     <Image
                         src={logo}
-                        className="mr-3 h-6 sm:h-9"
                         alt="Anonymus Blog Logo"
                         width={50}
                         height={50}

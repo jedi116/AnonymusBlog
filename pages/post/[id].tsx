@@ -14,7 +14,8 @@ const Post = () => {
         display:'flex',
         alignItems: 'center',
         flexDirection: 'column',
-        height: '100vh'
+        minHeight: '100vh',
+        height:'auto'
     }}
   >
     <h1

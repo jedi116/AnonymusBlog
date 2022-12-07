@@ -25,12 +25,13 @@ const AddPost : React.FC<{}> = () => {
         try {
             const post: Post  = {
                 title: data.title as string,
-                author: data.author as string,
+                author: data.author as string || '',
                 body: data.content as string,
                 createdAt: new Date(),
                 published: true,
                 updatedAt: new Date()
             }
+            console.log(post)
             const response = await fetch('/api/addPost',{
                 method: 'POST',
                 headers: {
